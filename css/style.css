@@ -1,0 +1,76 @@
+body {
+	background: url('../img/sitting.jpg') no-repeat top center fixed;
+	background-size: cover;
+}
+
+.start-page {
+	height: 100vh;
+}
+
+.content {
+	text-align: center;
+	position: relative;
+	top: 35%;
+}
+
+.game-screen {
+	background-color: white;
+	height: 80vh;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+
+.container {
+	margin: 0 30%;
+	outline: 1px solid red;
+	height: 100%;
+}
+
+/*.content2 {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}*/
+
+.instructions {
+	text-align: center;
+	outline: 1px solid red;
+}
+.instructions h1 {
+	margin-bottom: 20%;
+}
+
+.instructions h3 {
+}
+
+.instructions p {
+}
+
+.answers {
+	margin-top: 1em;
+}
+
+.answers li {
+	margin: .5em 0;
+	border: 1px solid red;
+	padding: .5em 0;
+}
+
+.submit {
+	text-align: right;
+}
+
+.footer {
+	background-color: grey;
+	height: 8%;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: 1000;
+}
+
+.encouragement {
+	text-align: center;
+	margin-bottom: 1em;
+}
