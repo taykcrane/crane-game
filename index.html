@@ -7,31 +7,32 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="js/script.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div class="start-page">
-		<div class="content">
-			<h1>The Crane Game</h1>
-			<h3>You think you know him, don't you?</h3>
-			<h5>Play the game</h5>
+		<div class="play-game">
+			<h1>THE CRANE GAME</h1>
+			<h3>I'm going to ask you a series of questions. The better you do, the more I will like you.</h3>
+			<h5>I'M READY</h5>
 		</div> 
 	</div>
 	<div class="game-screen">
-		<div class="container">
-			<div class="content2">
+		<div class="content">
+			<div class="container">
 				<div class="instructions">
 					<h1>The Crane Game</h1>
 					<h3>You think you know him, don't you?</h3>
 					<p>I'm going to ask you a series of questions. The better you do, the more I will like you.</p>
 				</div>
 				<div class="question-box">
-					<div class="number"></div>
+					<div class="number">1 --></div>
 					<p class="question-text">Taylor's middle name is:</p>
 					<ul class="answers">
-						<li>K</li>
-						<li>Kaleidescope</li>
-						<li>Khaleesi</li>
-						<li>He doesn't have one</li>
+						<li><span class="letter">a</span>K</li>
+						<li><span class="letter">b</span>Kaleidescope</li>
+						<li><span class="letter">c</span>Khaleesi</li>
+						<li><span class="letter">d</span>He doesn't have one</li>
 					</ul>
 					<div class="submit">Next</div>
 				</div>
@@ -39,12 +40,11 @@
 		</div>
 		<div class="footer">
 			<div class="container">
-				<div class="content2">
-					<p class="encouragement">Come on now, I believe in you.</p>
-					<div class="progress-bar">
-					</div>
-					<p>3 of 10 answered</p>
+				<p class="score">Score: 2 correct</p>
+				<div class="progress-bar">
+					<div class="percentage"></div>
 				</div>
+				<p class="completion">30% complete</p>
 			</div>	
 		</div>
 	</div>
