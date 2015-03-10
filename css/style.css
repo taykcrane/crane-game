@@ -8,6 +8,7 @@ body {
 .start-page {
 	height: 100vh;
 	color: white;
+	display: none;
 }
 
 .play-game {
@@ -43,7 +44,7 @@ body {
 }
 
 .game-screen {
-	background-color: white;
+	background-color: rgba(265,265,265,.6);
 	height: 80vh;
 	width: 100%;
 	position: fixed;
