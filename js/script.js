@@ -32,5 +32,8 @@ var question2 = {
 	correctAnswer: 0
 }
 
-console.log(question1.qNum);
-console.log(question2.answers);
+//Randomizes my list of questions
+function qRandomize () {
+	
+}
+
