@@ -98,20 +98,29 @@ body {
 	margin-bottom: 3em;
 }
 
-.instructions p {
-	width: 50%;
-	margin: 0 auto;
-	padding: 1em 2em;
+.message {
 	border: 5px solid #444;
+	width: 50%;
+	height: 4em;
+	margin: 0 auto;
+	padding: 0em 2em;
+}
+
+.message p {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .question-box {
+	position: relative;
 	height: 100%;
+	display: none;
 }
 
 .number {
 	position: absolute;
-	left: 26%;
+	left: -10%;
 }
 
 .question-text {
@@ -150,7 +159,7 @@ body {
 	color: #fff;
 }
 
-.answers .selected, .selected {
+.answers .selected, .selected, .congrats {
 	background: rgba(89, 171, 227, 1);
 	color: #fff;
 }
@@ -162,6 +171,29 @@ body {
 .submit {
 	float: right;
 	padding: .75em 1.5em;
+}
+
+.congrats {
+	height: 25em;
+	width: 50%;
+	margin: 0 auto;
+	padding: 0 2em;
+	text-align: center;
+	border: 5px solid rgba(89, 171, 227, 1);
+}
+
+.congrats h1 {
+	margin: 1em 0;
+	font-size: 2em;
+}
+
+.congrats h3 span {
+	font-size: 2em;
+	display: block;
+}
+
+.congrats img {
+	margin: 2em 0;
 }
 
 .footer {
@@ -208,7 +240,9 @@ body {
 	font-weight: 400;
 }
 
-
+.submit:hover, #im-ready:hover, .answers li:hover {
+	cursor: pointer;
+}
 
 
 

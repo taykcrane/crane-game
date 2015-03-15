@@ -36,14 +36,37 @@ var question3 = {
 	correctAnswer: "Answer 2"
 }
 
+var question4 = {
+	questionText: "What is Taylor's beverage of choice?",
+	answers: ["A beer", "An Apple-tini", "A cappuccino with heart-shaped foam", "Apple juice"],
+	correctAnswer: "Apple juice"
+}
+
+var question5 = {
+	questionText: "On Saturdays, Taylor is most likely to be found where?",
+	answers: ["Engaging his creative side at the MoMa", "Building this stupid fucking website", "Brunching with his favorite betches", "Going for a run hahahahaha"],
+	correctAnswer: "Building this stupid fucking website"
+}
+
+var question6 = {
+	questionText: "Taylor is about to be sent to a deserted island but is allowed to bring one thing with him. What dooes he bring?",
+	answers: ["Alcohol", "Weed", "A girlfriend", "A dozen bagels", "WiFi"],
+	correctAnswer: "WiFi"
+}
+
+var question7 = {
+	questionText: "Which of the following has Taylor NEVER had?",
+	answers: ["Friends", "Leggings", "A coffee", "Kangaroo meat", "An android phone"],
+	correctAnswer: "A coffee"	
+}
+
 //Shuffles my list of questions
 function shuffle (o) {
 	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 }
 
-var myQuestions = shuffle([question1, question2, question3]);
-console.log(myQuestions);
+var myQuestions = shuffle([question1, question2, question3, question4, question5, question6]);
 
 //Declares a function to place a Question Object into the UI. The function takes the position of the question in the myQuestions array, defined as q
 function insertQuestion(q) {
@@ -53,7 +76,6 @@ function insertQuestion(q) {
 		var answerLI = myQuestions[q].answers[i];
 		var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"];
 		var letterLI = alphabet[i];
-		console.log(letterLI + "-" + answerLI);
 		$(".answers").append("<li><span class='letter'>" + letterLI + "</span>" + answerLI + "</li>");
 	}
 }
@@ -67,15 +89,18 @@ $(document).ready(function() {
 //When the next button is hit, cycle through questions
 var qNum = 0; //where 0 is the FIRST question in the array
 $(".submit").on("click", function () {
-	updateScore();
-	updateProgress();
 	if ($(this).hasClass("selected")) {
+		updateScore();
+		updateProgress();
+		updateStreak();
+		updateMessage();
+		toFinish();
 		qNum++;
 		if (qNum < myQuestions.length) {
 			insertQuestion(qNum);
-			console.log(qNum);
 			$(".submit").removeClass("selected");
 		} else {
+			moveQuestions();
 			console.log("I got no more!");
 			return;
 		};		
@@ -136,14 +161,87 @@ function updateProgress () {
 	console.log("width after: " + myWidth);
 }
 
-//Declares a function that updates the message box with the appropriate message
+//Declares a function that calculates the user's steak
 var winStreak = 0;
 var loseStreak = 0;
-function updateMessage () {
-	if (winStreak )
+function updateStreak () {
+	if (checksAnswer()) {
+		loseStreak = 0;
+		winStreak++;
+		console.log("winStreak is " + winStreak);
+		console.log("loseStreak is " + loseStreak);
+	} else {
+		winStreak = 0;
+		loseStreak++;
+		console.log("winStreak is " + winStreak);
+		console.log("loseStreak is " + loseStreak);
+	}
 }
 
+//Updates the message based on the user's streak
+var $myMessage = $(".instructions p");
+function updateMessage () {
+	if (winStreak === 1) {
+		$myMessage.text("Alright, not bad. Not good yet, but not bad.");
+	} else if (winStreak === 2) {
+		$myMessage.text("OK OK, pretty good. Let's see if you can keep it up though.");
+	} else if (winStreak === 3) {
+		$myMessage.text("This user's on fiyahhhhh - Alicia Keys");
+	} else if (winStreak === 4) {
+		$myMessage.text("This is pretty impressive, not gonna lie. Did you study for this?");
+	} else if (winStreak === 5) {
+		$myMessage.text("OK yea, you studied. The bad news is you don't get anything for a good score.");
+	} else if (winStreak === 6) {
+		$myMessage.text("I'm beginning to suspect you of cheating.");
+	} else if (winStreak === 7) {
+		$myMessage.text("You know me very well. Maybe we should get married? Wait are you a boy or a girl?");
+	} else if (winStreak === 8) {
+		$myMessage.text("Hi mom! Good job so far.");
+	} else if (winStreak === 9) {
+		$myMessage.text("FINISH HIM...!");
+	} else if (winStreak === 10) {
+		$myMessage.text("http://media0.giphy.com/media/PUBxelwT57jsQ/200.gif");
+	} else if (loseStreak === 1) {
+		$myMessage.text("It's okay, just do better next question.");
+	} else if (loseStreak === 2) {
+		$myMessage.text("I have faith in you, come on. Unleash your inner Crane.");
+	} else if (loseStreak === 3) {
+		$myMessage.text("You're doing bad. And you should feel bad.");
+	} else if (loseStreak === 4) {
+		$myMessage.text("I'm regretting sending you the link to complete this quiz.");
+	} else if (loseStreak === 5) {
+		$myMessage.text("GET ONE MORE WRONG AND WATCH WHAT HAPPENS.");
+	} else if (loseStreak === 6) {
+		$myMessage.text("Aaannnnndddd... we're no longer friends.");
+	} else if (loseStreak === 7) {
+		$myMessage.text("OK you're just tanking now, aren't you?");
+	} else if (loseStreak === 8) {
+		$myMessage.text("There are two questions left, but maybe you should just... not.");
+	} else if (loseStreak === 9) {
+		$myMessage.text("You're embarrassing yourself.");
+	} else if (loseStreak === 10) {
+		$myMessage.text("http://www.quickmeme.com/img/c3/c366ecb1df0098ca3249d3bd69f87c06451bcfc7b03953a6c322e063402ecb83.jpg");
+	}
+}
 
+//Once the last question is answered, animate the questions off to the right
+function moveQuestions () {
+	console.log("hello");
+	$(".question-box").animate({
+		left: "200%",
+	}, 500, function() {
+		$(".question-box").toggle();
+		console.log("Move in the congratulions message");
+	})
+}
 
+//Changes the "next" button to say "finish" on the last question
+function toFinish () {
+	if (qNum === myQuestions.length - 2) {
+		$(".submit").text("finish");
+		console.log("next changed to finish");
+	}
+
+}
 
 
