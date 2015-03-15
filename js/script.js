@@ -67,6 +67,7 @@ $(document).ready(function() {
 //When the next button is hit, cycle through questions
 var qNum = 0; //where 0 is the FIRST question in the array
 $(".submit").on("click", function () {
+	updateScore();
 	if ($(this).hasClass("selected")) {
 		qNum++;
 		if (qNum < myQuestions.length) {
@@ -81,6 +82,7 @@ $(".submit").on("click", function () {
 		console.log("no selection");
 		return;
 	}
+
 })
 
 //Highlights a chosen answer in blue
@@ -104,9 +106,14 @@ function checksAnswer () {
 }
 
 //Declares a function that updates the score after an answer was submitted
+var score = 0;
 function updateScore () {
 	if (checksAnswer()) {
-		
+		console.log("score++");
+		score++;
+		$(".score span").text(score);
+	} else {
+		console.log("no score");
 	}
 }
 
