@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$("#im-ready").on("click", function() {
 		$(".play-game").animate({
 			top: "-40%"
-		}, 500, "easeInOutCubic")
+		}, 500, "linear")
 		$(".game-screen").show();
 		$(".game-screen").animate({
 			height: "100%"
@@ -21,19 +21,19 @@ $(document).ready(function() {
 var question1 = {
 	questionText: "What is Taylor's middle name?",
 	answers: ["K", "Kaleidescope", "Khaleesi", "He doesn't have one"],
-	correctAnswer: 3
+	correctAnswer: "He doesn't have one"
 }
 
 var question2 = {
 	questionText: "Taylor's favorite burger from Bareburger is:",
 	answers: ["Maui Waui", "Roadhouse", "Western", "Supreme", "Taylor's actually a vegan"],
-	correctAnswer: 0
+	correctAnswer: "Maui Waui"
 }
 
 var question3 = {
 	questionText: "If Taylor were a startup, he'd be the Uber for __________:",
 	answers: ["Answer 1", "Answer 2", "Answer 3"],
-	correctAnswer: 1
+	correctAnswer: "Answer 2"
 }
 
 //Shuffles my list of questions
@@ -65,13 +65,50 @@ $(document).ready(function() {
 
 
 //When the next button is hit, cycle through questions
-var qNum = 1; //where 1 is the SECOND question in the array
+var qNum = 0; //where 0 is the FIRST question in the array
 $(".submit").on("click", function () {
-	insertQuestion(qNum);
-	qNum++;
+	if ($(this).hasClass("selected")) {
+		qNum++;
+		if (qNum < myQuestions.length) {
+			insertQuestion(qNum);
+			console.log(qNum);
+			$(".submit").removeClass("selected");
+		} else {
+			console.log("I got no more!");
+			return;
+		};		
+	} else {
+		console.log("no selection");
+		return;
+	}
 })
 
+//Highlights a chosen answer in blue
+$(".answers").on("click", "li", function () {
+	$("li").removeClass("selected");
+	$(this).addClass("selected");
+	$(".submit").addClass("selected");
+});
 
+//Declares a function that checks whether or not the selected answer is correct.
+function checksAnswer () {
+	var rawSelection = $("li.selected").text();
+	var selection = rawSelection.substring(1, rawSelection.length + 1);
+	if (selection === myQuestions[qNum].correctAnswer) {
+		console.log("You got it right");
+		return true;
+	} else {
+		console.log("You got it wrong");
+		return false;
+	}
+}
+
+//Declares a function that updates the score after an answer was submitted
+function updateScore () {
+	if (checksAnswer()) {
+		
+	}
+}
 
 
 
