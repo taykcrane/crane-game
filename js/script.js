@@ -68,6 +68,7 @@ $(document).ready(function() {
 var qNum = 0; //where 0 is the FIRST question in the array
 $(".submit").on("click", function () {
 	updateScore();
+	updateProgress();
 	if ($(this).hasClass("selected")) {
 		qNum++;
 		if (qNum < myQuestions.length) {
@@ -115,6 +116,31 @@ function updateScore () {
 	} else {
 		console.log("no score");
 	}
+}
+
+//Declares a function that updates the progress bar after every answer is submitted
+var myWidth = 0;
+var myProgress = 0;
+function updateProgress () {
+	console.log("width before: " + myWidth);
+	if (myWidth < 99.9999) {
+		myWidth = myWidth + 1 / myQuestions.length * 100;
+		var widthPercentage = myWidth + "%"; 
+		$(".percentage").css("width", widthPercentage);
+		myProgress = myWidth;
+		myProgress = Math.round(myProgress);
+		$(".completion span").text(myProgress);
+	} else {
+		console.log("already at 100%");
+	}
+	console.log("width after: " + myWidth);
+}
+
+//Declares a function that updates the message box with the appropriate message
+var winStreak = 0;
+var loseStreak = 0;
+function updateMessage () {
+	if (winStreak )
 }
 
 
