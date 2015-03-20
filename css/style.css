@@ -42,7 +42,7 @@ body {
 	padding: .5em 4em;
 }
 
-.start-page h5:hover {
+.start-page h5:hover, .congrats h5:hover {
 	background-color: white;
 	color: #444;
 }
@@ -174,7 +174,7 @@ body {
 }
 
 .congrats {
-	height: 25em;
+	height: 22em;
 	width: 50%;
 	margin: 0 auto;
 	padding: 0 2em;
@@ -183,17 +183,31 @@ body {
 }
 
 .congrats h1 {
-	margin: 1em 0;
+	margin: .5em 0;
 	font-size: 2em;
+}
+
+.congrats h3 {
+	margin: 1em 0 0 0;
 }
 
 .congrats h3 span {
 	font-size: 2em;
 	display: block;
+	margin: .125em 0;
+	font-weight: 400;
 }
 
 .congrats img {
-	margin: 2em 0;
+	margin: 1em 0 1em;
+	width: 60%;
+}
+
+.congrats h5 {
+	width: 70%;
+	margin: 0 auto;
+	padding: .5em 0em;
+	border: 5px solid #fff;
 }
 
 .footer {
@@ -240,7 +254,7 @@ body {
 	font-weight: 400;
 }
 
-.submit:hover, #im-ready:hover, .answers li:hover {
+.submit:hover, #im-ready:hover, .answers li:hover, .congrats h5:hover {
 	cursor: pointer;
 }
 
