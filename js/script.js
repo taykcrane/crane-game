@@ -224,17 +224,6 @@ function updateMessage () {
 	}
 }
 
-//Once the last question is answered, animate the questions off to the right
-function moveQuestions () {
-	console.log("hello");
-	$(".question-box").animate({
-		left: "200%",
-	}, 500, function() {
-		$(".question-box").toggle();
-		console.log("Move in the congratulions message");
-	})
-}
-
 //Changes the "next" button to say "finish" on the last question
 function toFinish () {
 	if (qNum === myQuestions.length - 2) {
@@ -244,4 +233,28 @@ function toFinish () {
 
 }
 
+//Once the last question is answered, animate the questions off to the right
+//And then moves the congrats message in from the left
+function moveQuestions () {
+	console.log("hello");
+	$(".message").animate({
+		left: "200%"
+	}, 500, function () {
+		$(".message").toggle();
+	})
+	$(".question-box").animate({
+		left: "200%"
+	}, 500, function() {
+		$(".question-box").toggle();
+		console.log("Move out questions box");
+		$(".congrats span").text(score);
+		$(".congrats").animate({
+			left: "0%"
+		}, 500, function() {
+			console.log("move in congrats message");
+	})
+	})
+}
+
+//Adds the correct score to the congrats message
 
