@@ -269,6 +269,18 @@ body {
 	cursor: pointer;
 }
 
+@media screen and (max-width: 1210px) {
+	.progress-bar {
+		width: 65%;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.message, .congrats {
+		width: 80%;
+	}
+}
+
 @media screen and (max-width: 700px) {
 	.container {
 		margin: 0 15%;
@@ -284,10 +296,6 @@ body {
 
 	.number {
 		left: -17%;
-	}
-
-	.progress-bar {
-		width: 65%;
 	}
 
 	.footer .container {
