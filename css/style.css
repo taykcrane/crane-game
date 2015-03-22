@@ -4,6 +4,7 @@ body {
 	font-family: "Roboto Condensed";
 	font-weight: 300;
 	line-height: 1.1;
+	color: #444;
 }
 
 .start-page {
@@ -124,7 +125,8 @@ body {
 	left: -10%;
 }
 
-.question-text {
+
+.question-text, .number {
 	font-weight: 400;
 	font-size: 1em;
 }

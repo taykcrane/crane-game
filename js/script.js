@@ -49,7 +49,7 @@ var question5 = {
 }
 
 var question6 = {
-	questionText: "Taylor is about to be sent to a deserted island but is allowed to bring one thing with him. What dooes he bring?",
+	questionText: "Taylor is about to be sent to a deserted island but is allowed to bring one thing with him. What does he bring?",
 	answers: ["Alcohol", "Weed", "A girlfriend", "A dozen bagels", "WiFi"],
 	correctAnswer: "WiFi"
 }
@@ -63,19 +63,19 @@ var question7 = {
 var question8 = {
 	questionText: "Which of the following bands does Taylor despise?",
 	answers: ["The Postal Service", "30 Seconds to Mars", "Rise Against", "Kings of Leon", "Linkin Park"],
-	correctAnswer: "A coffee"
+	correctAnswer: "The Postal Service"
 }
 
 var question9 = {
 	questionText: "What does Taylor's favorite jacket say about him?",
-	answers: ["Dad likes leather", "He's from Canada, eh?"],
-	correctAnswer: "Dad likes leather"
+	answers: ['Something that says "Dad likes leather"', "He's from Canada, eh?"],
+	correctAnswer: 'Something that says "Dad likes leather"'
 }
 
 var question10 = {
-	questionText: "Which of the following is something Taylor want's to do before he dies?",
-	answers: ["Friends", "Leggings", "A coffee", "Kangaroo meat", "An android phone"],
-	correctAnswer: "A coffee"
+	questionText: "Which of the following is something Taylor wants to do before he dies?",
+	answers: ["Go skydiving", "Spend a night in jail", "Own a motorcycle", "Share a kiss atop the Eiffel Tower"],
+	correctAnswer: "Own a motorcycle"
 }
 
 //Shuffles my list of questions
@@ -84,7 +84,7 @@ function shuffle (o) {
     return o;
 }
 
-var myQuestions = shuffle([question1, question2, question3, question4, question5, question6, question7]);
+var myQuestions = shuffle([question1, question2, question3, question4, question5, question6, question7, question8, question9, question10]);
 
 //Declares a function to place a Question Object into the UI. The function takes the position of the question in the myQuestions array, defined as q
 function insertQuestion(q) {
@@ -114,6 +114,7 @@ $(".submit").on("click", function () {
 		updateMessage();
 		toFinish();
 		qNum++;
+		increaseqNum();
 		if (qNum < myQuestions.length) {
 			insertQuestion(qNum);
 			$(".submit").removeClass("selected");
@@ -158,6 +159,14 @@ function updateScore () {
 		$(".score span").text(score);
 	} else {
 		console.log("no score");
+	}
+}
+
+//Declares a function that increments the question number
+function increaseqNum () {
+	console.log("qnumtest");
+	if (qNum < 10) {
+		$(".number span").text(qNum + 1);
 	}
 }
 
@@ -277,6 +286,7 @@ $(".congrats h5").on("click", function () {
 	shuffle(myQuestions);
 	insertQuestion(0);
 	qNum = 0;
+	$(".number span").text("1");
 	score = 0;
 	$(".score span").text(score);
 	myWidth = 0;
