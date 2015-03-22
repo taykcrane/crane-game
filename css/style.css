@@ -269,6 +269,27 @@ body {
 	cursor: pointer;
 }
 
+@media screen and (max-width: 700px) {
+	.container {
+		margin: 0 10%;
+	}
+
+	.content {
+		margin-top: 1em;
+	}
+
+	.message {
+		width: 75%;
+	}
+
+	.progress-bar {
+		width: 65%;
+	}
+
+	.congrats {
+		width: 80%;
+	}
+}
 
 
 
