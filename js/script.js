@@ -267,7 +267,7 @@ function moveQuestions () {
 	$(".message").animate({
 		left: "200%"
 	}, 500, function () {
-		$(".message").toggle();
+		$(".message").css("display", "none");
 	})
 	$(".question-box").animate({
 		left: "200%"

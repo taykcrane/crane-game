@@ -271,7 +271,7 @@ body {
 
 @media screen and (max-width: 700px) {
 	.container {
-		margin: 0 10%;
+		margin: 0 15%;
 	}
 
 	.content {
@@ -284,6 +284,10 @@ body {
 
 	.progress-bar {
 		width: 65%;
+	}
+
+	.footer .container {
+		margin: 0 10%;
 	}
 
 	.congrats {
