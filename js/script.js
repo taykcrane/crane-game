@@ -32,8 +32,8 @@ var question2 = {
 
 var question3 = {
 	questionText: "If Taylor were a startup, he'd be the Uber for __________:",
-	answers: ["Answer 1", "Answer 2", "Answer 3"],
-	correctAnswer: "Answer 2"
+	answers: ["Home cooked meals", "Chapstick", "Relationship advice"],
+	correctAnswer: "Chapstick"
 }
 
 var question4 = {
@@ -60,13 +60,31 @@ var question7 = {
 	correctAnswer: "A coffee"	
 }
 
+var question8 = {
+	questionText: "Which of the following bands does Taylor despise?",
+	answers: ["The Postal Service", "30 Seconds to Mars", "Rise Against", "Kings of Leon", "Linkin Park"],
+	correctAnswer: "A coffee"
+}
+
+var question9 = {
+	questionText: "What does Taylor's favorite jacket say about him?",
+	answers: ["Dad likes leather", "He's from Canada, eh?"],
+	correctAnswer: "Dad likes leather"
+}
+
+var question10 = {
+	questionText: "Which of the following is something Taylor want's to do before he dies?",
+	answers: ["Friends", "Leggings", "A coffee", "Kangaroo meat", "An android phone"],
+	correctAnswer: "A coffee"
+}
+
 //Shuffles my list of questions
 function shuffle (o) {
 	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 }
 
-var myQuestions = shuffle([question1, question2, question3, question4, question5, question6]);
+var myQuestions = shuffle([question1, question2, question3, question4, question5, question6, question7]);
 
 //Declares a function to place a Question Object into the UI. The function takes the position of the question in the myQuestions array, defined as q
 function insertQuestion(q) {
@@ -235,8 +253,8 @@ function toFinish () {
 
 //Once the last question is answered, animate the questions off to the right
 //And then moves the congrats message in from the left
+//Adds the correct score to the congrats message
 function moveQuestions () {
-	console.log("hello");
 	$(".message").animate({
 		left: "200%"
 	}, 500, function () {
@@ -244,17 +262,43 @@ function moveQuestions () {
 	})
 	$(".question-box").animate({
 		left: "200%"
-	}, 500, function() {
+	}, 500, function () {
 		$(".question-box").toggle();
-		console.log("Move out questions box");
 		$(".congrats span").text(score);
 		$(".congrats").animate({
 			left: "0%"
-		}, 500, function() {
-			console.log("move in congrats message");
-	})
+		}, 500)
 	})
 }
 
-//Adds the correct score to the congrats message
+//When the "Play again?" button is clicked, start a new game
+$(".congrats h5").on("click", function () {
+	console.log("He's playin again!");
+	shuffle(myQuestions);
+	insertQuestion(0);
+	qNum = 0;
+	score = 0;
+	$(".score span").text(score);
+	myWidth = 0;
+	$(".percentage").css("width", "0%");
+	myProgress = 0;
+	$(".completion span").text("0");
+	winStreak = 0;
+	loseStreak = 0;
+	$(".instructions p").text("I'm going to ask you a series of questions. The better you do, the more I will like you.");
+	$(".submit").text("next");
+	$(".submit").removeClass("selected");
+	$(".congrats").animate({
+		left: "-200%"
+	}, 500, function () {
+		$(".question-box").toggle();
+		$(".question-box").animate({
+			left: "0%"
+		}, 500)
+		$(".message").toggle();
+		$(".message").animate({
+			left: "0%"
+		}, 500)	
+	})
+})
 

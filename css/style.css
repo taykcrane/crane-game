@@ -1,8 +1,9 @@
 body {
 	background: url('../img/plane.jpg') no-repeat top center fixed;
 	background-size: cover;
-	font-family: "Lato", "sans-serif";
+	font-family: "Roboto Condensed";
 	font-weight: 300;
+	line-height: 1.1;
 }
 
 .start-page {
@@ -74,7 +75,7 @@ body {
 }
 
 .content {
-	margin-top: 2em;
+	margin-top: 6em;
 }
 
 .container {
@@ -174,7 +175,7 @@ body {
 }
 
 .congrats {
-	height: 22em;
+	height: 25em;
 	width: 50%;
 	margin: 0 auto;
 	padding: 0 2em;
@@ -207,7 +208,7 @@ body {
 
 .congrats h5 {
 	width: 70%;
-	margin: 0 auto;
+	margin: 1em auto 0;
 	padding: .5em 0em;
 	border: 5px solid #fff;
 }
