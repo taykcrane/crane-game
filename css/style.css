@@ -282,6 +282,10 @@ body {
 		display: none;
 	}
 
+	.number {
+		left: -17%;
+	}
+
 	.progress-bar {
 		width: 65%;
 	}
@@ -292,6 +296,7 @@ body {
 
 	.congrats {
 		width: 80%;
+		padding: 0 1.3em;
 	}
 }
 

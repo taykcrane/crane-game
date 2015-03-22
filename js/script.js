@@ -305,10 +305,16 @@ $(".congrats h5").on("click", function () {
 		$(".question-box").animate({
 			left: "0%"
 		}, 500)
-		$(".message").toggle();
-		$(".message").animate({
-			left: "0%"
-		}, 500)	
+		var mq = window.matchMedia('@media screen and (max-width: 700px)');
+		if(mq.matches) {
+		   console.log("less than 700px");
+		} else {
+			console.log("bigger than 700px");
+		    $(".message").toggle();
+			$(".message").animate({
+				left: "0%"
+			}, 500)
+		}
 	})
 })
 
