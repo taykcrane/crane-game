@@ -16,7 +16,9 @@ body {
 	text-align: center;
 	position: relative;
 	top: 40%;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .start-page h1, .start-page h5 {
@@ -112,7 +114,9 @@ body {
 .message p {
 	position: relative;
 	top: 50%;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .question-box {
@@ -228,7 +232,9 @@ body {
 .footer .container {
 	position: relative;
 	top: 50%;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .score {
