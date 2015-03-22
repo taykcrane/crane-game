@@ -279,7 +279,7 @@ body {
 	}
 
 	.message {
-		width: 75%;
+		display: none;
 	}
 
 	.progress-bar {
