@@ -4,28 +4,80 @@
 		"selected_items":
 		[
 			[
-				"marg",
-				"margin-right"
-			],
-			[
-				"font-",
-				"font-weight"
+				"my",
+				"myQuestions"
 			],
 			[
 				"font",
-				"font-family"
+				"font-size"
 			],
 			[
-				"back",
-				"background-size"
+				"marg",
+				"margin-top"
 			],
 			[
-				"margin",
-				"margin-right"
+				"fon",
+				"font-size"
+			],
+			[
+				"move",
+				"moveQuestions"
+			],
+			[
+				"question",
+				"question6"
 			],
 			[
 				"inl",
-				"inline"
+				"inline-block"
+			],
+			[
+				"checks",
+				"checksAnswer"
+			],
+			[
+				"width",
+				"widthStart"
+			],
+			[
+				"wid",
+				"widthStart"
+			],
+			[
+				"q",
+				"qNum"
+			],
+			[
+				"check",
+				"checksAnswer"
+			],
+			[
+				"corre",
+				"correctAnswer"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"margin",
+				"margin-bottom"
 			],
 			[
 				"inlin",
@@ -34,10 +86,6 @@
 			[
 				"border",
 				"border"
-			],
-			[
-				"text",
-				"text-decoration"
 			],
 			[
 				"backgroun",
@@ -72,16 +120,8 @@
 				"translateY"
 			],
 			[
-				"in",
-				"inline"
-			],
-			[
 				"text-",
 				"text-align"
-			],
-			[
-				"background",
-				"background-repeat"
 			],
 			[
 				"max",
@@ -119,7 +159,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 306,
+				"buffer_size": 2287,
 				"line_ending": "Unix"
 			}
 		},
@@ -127,7 +167,7 @@
 			"file": "css/style.css",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 5174,
 				"line_ending": "Unix"
 			}
 		},
@@ -136,15 +176,14 @@
 			"settings":
 			{
 				"buffer_size": 1096,
-				"line_ending": "Unix",
-				"name": "/**"
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "js/script.js",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 10133,
 				"line_ending": "Unix"
 			}
 		}
@@ -190,10 +229,13 @@
 	"expanded_folders":
 	[
 		"/Users/taylorcrane/Desktop/Projects/crane-game",
-		"/Users/taylorcrane/Desktop/Projects/crane-game/css"
+		"/Users/taylorcrane/Desktop/Projects/crane-game/css",
+		"/Users/taylorcrane/Desktop/Projects/crane-game/js"
 	],
 	"file_history":
 	[
+		"/Users/taylorcrane/Desktop/Projects/crane-game/js/script.js",
+		"/Users/taylorcrane/Desktop/Projects/crane-game/css/reset.css",
 		"/Users/taylorcrane/Desktop/Projects/jquery-streetfighter/css/main.css",
 		"/Users/taylorcrane/Desktop/Projects/startup-landing-page-clone/landing.html",
 		"/Users/taylorcrane/Desktop/Projects/about-me-page/about-me.sublime-project",
@@ -221,7 +263,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -265,15 +307,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 306,
+						"buffer_size": 2287,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								290,
-								290
+								1376,
+								1376
 							]
 						],
 						"settings":
@@ -281,16 +323,16 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 306.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -299,15 +341,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 5174,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1437,
+								1437
 							]
 						],
 						"settings":
@@ -315,16 +357,16 @@
 							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1011.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
 					"file": "css/reset.css",
-					"semi_transient": false,
+					"semi_transient": true,
 					"settings":
 					{
 						"buffer_size": 1096,
@@ -334,13 +376,12 @@
 						"selection":
 						[
 							[
-								1096,
-								1096
+								334,
+								334
 							]
 						],
 						"settings":
 						{
-							"auto_name": "/**",
 							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -348,7 +389,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -357,15 +398,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 10133,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								9984,
+								9984
 							]
 						],
 						"settings":
@@ -373,10 +414,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4610.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
