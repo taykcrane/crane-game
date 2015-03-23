@@ -281,7 +281,7 @@ function moveQuestions () {
 }
 
 //When the "Play again?" button is clicked, start a new game
-var mq = window.matchMedia('@media all and (max-width: 700px)');
+var mq = window.matchMedia('all and (max-width: 700px)');
 $(".congrats h5").on("click", function () {
 	console.log("He's playin again!");
 	shuffle(myQuestions);
